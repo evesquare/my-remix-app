@@ -14,13 +14,15 @@ import { MetaFunction, LinksFunction } from "@remix-run/node"; // Depends on the
 
 import { ServerStyleContext, ClientStyleContext } from "./context";
 
-export const meta: MetaFunction = () => ({
-  charset: "utf-8",
-  title: "New Remix App",
-  viewport: "width=device-width,initial-scale=1",
-});
+export const meta: MetaFunction = () => {
+  return [
+    { charSet: "utf-8" },
+    { title: "New Remix App" },
+    { name: "viewport", content: "width=device-width, initial-scale=1" },
+  ];
+};
 
-export let links: LinksFunction = () => {
+export const links: LinksFunction = () => {
   return [
     { rel: "preconnect", href: "https://fonts.googleapis.com" },
     { rel: "preconnect", href: "https://fonts.gstatic.com" },
